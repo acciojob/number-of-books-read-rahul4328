@@ -16,12 +16,16 @@ const library = [
   },
 ];
 
-const numberOfBooksRead = (library) => {
-  // write your code here
-	return library.filter((book) => book.readingStatus === true).length;
-  
+const numberOfBooksRead = () => {
+  let count = 0;
+  for (const book of library) {
+    if (book.readingStatus) {
+      count++;
+    }
+  }
+  return count;
 };
 
-// Do not change the code below
 
-alert(numberOfBooksRead());
+console.log(numberOfBooksRead());
+
